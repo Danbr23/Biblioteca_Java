@@ -41,6 +41,6 @@ public class Main extends Application {
 			e.printStackTrace();
 		}
 		
-		/*Salve Maria! */
+		/*Salve Maria!*/
 	}
 }
