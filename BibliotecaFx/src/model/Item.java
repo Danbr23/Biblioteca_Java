@@ -1,12 +1,14 @@
-package biblioteca;
+package model;
+
+
+import javafx.beans.property.StringProperty;
 
 public abstract class Item {
 	
 	protected int codigo;
 	protected String titulo;
 	protected boolean emprestado;
-	
-	
+		
 	public int getCodigo() {
 		return codigo;
 	}
@@ -20,7 +22,7 @@ public abstract class Item {
 	}
 
 	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+		this.titulo = titulo ;
 	}
 
 	public boolean isEmprestado() {

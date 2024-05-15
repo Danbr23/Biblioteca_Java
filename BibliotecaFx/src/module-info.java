@@ -5,5 +5,7 @@ module BibliotecaFx {
 	requires javafx.base;
 	requires java.sql;
 	
+	opens model to javafx.base;
+	opens controller to javafx.fxml;
 	opens application to javafx.graphics, javafx.fxml;
 }

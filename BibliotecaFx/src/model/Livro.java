@@ -1,4 +1,6 @@
-package biblioteca;
+package model;
+
+import javafx.beans.property.SimpleStringProperty;
 
 public class Livro extends Item implements Emprestavel {
 	

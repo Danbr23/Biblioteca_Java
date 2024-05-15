@@ -1,4 +1,4 @@
-package biblioteca;
+package model;
 
 public class Usuario extends Pessoa {
 	
@@ -6,7 +6,7 @@ public class Usuario extends Pessoa {
 	private String telefone;
 	
 	
-	public Usuario(int cpf, String nome, String endereco, String telefone) {
+	public Usuario(String cpf, String nome, String endereco, String telefone) {
 		super(cpf,nome);
 		this.endereco = endereco;
 		this.telefone = telefone;

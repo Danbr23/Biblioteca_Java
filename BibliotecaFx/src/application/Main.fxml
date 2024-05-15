@@ -1,47 +1,285 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="application.Controller">
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Controller">
   <tabs>
     <Tab text="Livros">
       <content>
         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ListView fx:id="listaComidas" layoutX="58.0" layoutY="57.0" prefHeight="200.0" prefWidth="200.0" />
-                  <Label fx:id="titulo" alignment="CENTER" layoutX="413.0" layoutY="51.0" prefHeight="41.0" prefWidth="66.0" text="sdafsdf" />
+                  <TableView fx:id="tableViewLivro" layoutX="45.0" layoutY="33.0" prefHeight="294.0" prefWidth="232.0">
+                    <columns>
+                      <TableColumn fx:id="tableColumnLivro" prefWidth="231.20001220703125" text="Título" />
+                    </columns>
+                  </TableView>
+                  <Label fx:id="labelTituloLivro" alignment="CENTER" layoutX="413.0" layoutY="51.0" prefHeight="41.0" prefWidth="66.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font></Label>
+                  <Label layoutX="381.0" layoutY="93.0" text="Genêro:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelGeneroLivro" layoutX="433.0" layoutY="93.0" prefHeight="18.0" prefWidth="129.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="123.0" text="Ano de Publicação:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelAnoLivro" layoutX="502.0" layoutY="123.0" prefHeight="20.0" prefWidth="61.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="151.0" text="Edição:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelEdicaoLivro" layoutX="430.0" layoutY="152.0" prefHeight="18.0" prefWidth="46.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Label layoutX="381.0" layoutY="180.0" text="Código:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCodigoLivro" layoutX="434.0" layoutY="180.0" prefHeight="20.0" prefWidth="64.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="208.0" text="Editora (código): ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCodigoEditoraLivro" layoutX="491.0" layoutY="210.0" prefHeight="20.0" prefWidth="31.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botaoEditarLivro" layoutX="382.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarAdicionarLivro" text="Editar" />
+                  <Button fx:id="botaoRemoverLivro" layoutX="444.0" layoutY="259.0" mnemonicParsing="false" onAction="#removerLivro" text="Remover" />
+                  <Button fx:id="botaoAdicionarLivro" layoutX="519.0" layoutY="324.0" mnemonicParsing="false" onAction="#editarAdicionarLivro" text="Adicionar" />
                </children></AnchorPane>
       </content>
     </Tab>
-    <Tab text="Usuários">
-      <content>
-        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      <Tab text="Usuários">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <ListView layoutX="115.0" layoutY="71.0" prefHeight="200.0" prefWidth="200.0" />
-               </children></AnchorPane>
-      </content>
-    </Tab>
-      <Tab text="Funcionários">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <ListView layoutX="100.0" layoutY="69.0" prefHeight="200.0" prefWidth="200.0" />
+                  <TableView fx:id="tableViewUsuario" layoutX="45.0" layoutY="33.0" prefHeight="294.0" prefWidth="232.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumnUsuario" prefWidth="231.20001220703125" text="Nome" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="labelNomeUsuario" alignment="CENTER" layoutX="413.0" layoutY="51.0" prefHeight="41.0" prefWidth="66.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="128.0" text="Contato:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelContatoUsuario" layoutX="445.0" layoutY="128.0" prefHeight="20.0" prefWidth="107.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="161.0" text="Endereço:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelEnderecoUsuario" layoutX="448.0" layoutY="163.0" prefHeight="20.0" prefWidth="61.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botaoEditarUsuario" layoutX="382.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarAdicionarUsuario" text="Editar" />
+                  <Button fx:id="botaoRemoverUsuario" layoutX="444.0" layoutY="259.0" mnemonicParsing="false" onAction="#removerUsuario" text="Remover" />
+                  <Button fx:id="botaoAdicionarUsuario" layoutX="519.0" layoutY="324.0" mnemonicParsing="false" onAction="#editarAdicionarUsuario" text="Adicionar" />
+                  <Label layoutX="381.0" layoutY="101.0" text="CPF:" />
+                  <Label fx:id="labelCpfUsuario" layoutX="410.0" layoutY="101.0" prefHeight="18.0" prefWidth="85.0" />
                </children>
             </AnchorPane>
-        </content>
+         </content>
+      </Tab>
+      <Tab text="Autores">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableViewAutor" layoutX="45.0" layoutY="33.0" prefHeight="294.0" prefWidth="232.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumnAutor" prefWidth="231.20001220703125" text="Nome" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="labelNomeAutor" alignment="CENTER" layoutX="413.0" layoutY="51.0" prefHeight="41.0" prefWidth="66.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="93.0" text="Nacionalidade:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelNacionalidadeAutor" layoutX="479.0" layoutY="93.0" prefHeight="20.0" prefWidth="107.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="123.0" text="Registro:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCodigoAutor" layoutX="440.0" layoutY="123.0" prefHeight="20.0" prefWidth="61.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botaoEditarAutor" layoutX="382.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarAdicionarAutor" text="Editar" />
+                  <Button fx:id="botaoRemoverAutor" layoutX="444.0" layoutY="259.0" mnemonicParsing="false" onAction="#removerAutor" text="Remover" />
+                  <Button fx:id="botaoAdicionarAutor" layoutX="519.0" layoutY="324.0" mnemonicParsing="false" onAction="#editarAdicionarAutor" text="Adicionar" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Editoras">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableViewEditora" layoutX="45.0" layoutY="33.0" prefHeight="294.0" prefWidth="232.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumnEditora" prefWidth="231.20001220703125" text="Nome" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="labelNomeEditora" alignment="CENTER" layoutX="413.0" layoutY="51.0" prefHeight="41.0" prefWidth="66.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="93.0" text="Contato:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelContatoEditora" layoutX="445.0" layoutY="93.0" prefHeight="20.0" prefWidth="107.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="123.0" text="Registro:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCodigoEditora" layoutX="440.0" layoutY="123.0" prefHeight="20.0" prefWidth="61.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botaoEditarEditora" layoutX="382.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarAdicionarEditora" text="Editar" />
+                  <Button fx:id="botaoRemoverEditora" layoutX="444.0" layoutY="259.0" mnemonicParsing="false" onAction="#removerEditora" text="Remover" />
+                  <Button fx:id="botaoAdicionarEditora" layoutX="519.0" layoutY="324.0" mnemonicParsing="false" onAction="#editarAdicionarEditora" text="Adicionar" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab text="Funcionarios">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tableViewFuncionario" layoutX="45.0" layoutY="33.0" prefHeight="294.0" prefWidth="232.0">
+                     <columns>
+                        <TableColumn fx:id="tableColumnFuncionario" prefWidth="231.20001220703125" text="Nome" />
+                     </columns>
+                  </TableView>
+                  <Label fx:id="labelNomeFuncionario" alignment="CENTER" layoutX="413.0" layoutY="51.0" prefHeight="41.0" prefWidth="66.0">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="93.0" text="CPF:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelCpfFuncionario" layoutX="414.0" layoutY="93.0" prefHeight="18.0" prefWidth="129.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="123.0" text="Função:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelFuncaoFuncionario" layoutX="435.0" layoutY="123.0" prefHeight="20.0" prefWidth="61.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="381.0" layoutY="151.0" text="Salário:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="labelSalarioFuncionario" layoutX="430.0" layoutY="152.0" prefHeight="18.0" prefWidth="46.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="botaoEditarFuncionario" layoutX="382.0" layoutY="259.0" mnemonicParsing="false" onAction="#editarAdicionarFuncionario" text="Editar" />
+                  <Button fx:id="botaoRemoverFuncionario" layoutX="444.0" layoutY="259.0" mnemonicParsing="false" onAction="#removerFuncionario" text="Remover" />
+                  <Button fx:id="botaoAdicionarFuncionario" layoutX="519.0" layoutY="324.0" mnemonicParsing="false" onAction="#editarAdicionarFuncionario" text="Adicionar" />
+               </children>
+            </AnchorPane>
+         </content>
       </Tab>
       <Tab text="Empréstimos">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-               <children>
-                  <ListView layoutX="125.0" layoutY="75.0" prefHeight="200.0" prefWidth="200.0" />
-               </children>
-            </AnchorPane>
-        </content>
+         <content>
+            <BorderPane prefHeight="200.0" prefWidth="200.0">
+               <center>
+                  <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <columns>
+                      <TableColumn fx:id="tableColumnEmprestimoUsuario" prefWidth="150.0" text="Usuário" />
+                      <TableColumn fx:id="tableColumnEmprestimoCpf" minWidth="1.5999755859375" prefWidth="150.0" text="CPF" />
+                        <TableColumn fx:id="tableColumnEmprestimoLivro" prefWidth="150.0" text="LIvro" />
+                        <TableColumn fx:id="tableColumnEmprestimoLivroCodigo" prefWidth="150.0" text="Código" />
+                    </columns>
+                  </TableView>
+               </center>
+               <top>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <items>
+                      <Button fx:id="botaoAdicionarEmprestimo" mnemonicParsing="false" onAction="#fazerEmprestimo" text="Adicionar" />
+                        <Button fx:id="botaoRemoverEmprestimo" mnemonicParsing="false" onAction="#removerEmprestimo" text="Remover" />
+                    </items>
+                  </ToolBar>
+               </top>
+            </BorderPane>
+         </content>
       </Tab>
   </tabs>
 </TabPane>

@@ -1,20 +1,21 @@
-package biblioteca;
+package model;
 
 public class Pessoa {
 	
-	protected int CPF;
+	protected String CPF;
 	protected String nome;
-	public int getCPF() {
+	
+	public String getCPF() {
 		return CPF;
 	}
 	
-	public Pessoa(int cpf, String nome) {
+	public Pessoa(String cpf, String nome) {
 		this.CPF = cpf;
 		this.nome = nome;
 	}
 	
-	public void setCPF(int cPF) {
-		CPF = cPF;
+	public void setCPF(String cpf) {
+		CPF = cpf;
 	}
 	public String getNome() {
 		return nome;

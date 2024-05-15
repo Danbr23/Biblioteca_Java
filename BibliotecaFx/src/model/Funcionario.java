@@ -1,11 +1,11 @@
-package biblioteca;
+package model;
 
 public class Funcionario extends Pessoa {
 	
 	String funcao;
 	float salario;
 	
-	public Funcionario(int cpf, String nome, String funcao, float salario) {
+	public Funcionario(String cpf, String nome, String funcao, float salario) {
 		super(cpf,nome);
 		this.funcao = funcao;
 		this.salario = salario;
